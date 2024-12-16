@@ -11,7 +11,7 @@ const app = express()
 app.use(express.json())
 app.use(cors({origin: '*'}))
 
-let database = null
+let database = null;
 
 const initializeDbAndServer = async () => {
   try {
@@ -48,7 +48,7 @@ app.post('/books', async (request, response) => {
           '${genre}',
            ${pages},
            ${publishedDate}
-        )` //Insert Data to Database
+        )`;
     const dbResponse = await database.run(createStudentQuery)
 
     response.send('Succesfully submit your Book to Database ')
@@ -63,7 +63,7 @@ app.get('/books', async (request, response) => {
   const {author} = request.query // Extract the 'author' query parameter
 
   try {
-    let getAllAssignment = 'SELECT * FROM books'
+    let getAllAssignment = 'SELECT * FROM books';
 
     // If an author is provided, modify the query to filter by author
     if (author) {
