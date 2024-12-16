@@ -34,13 +34,7 @@ initializeDbAndServer()
 // POSTING BOOK DETAILS
 
 
-db.get("PRAGMA integrity_check;", (err, row) => {
-    if (err) {
-        console.error('Error running integrity check:', err);
-    } else {
-        console.log('Integrity check result:', row);
-    }
-}); 
+
 
 app.post('/books', async (request, response) => {
   const {title, author, genre, pages, publishedDate} = request.body // Posting Book Details
