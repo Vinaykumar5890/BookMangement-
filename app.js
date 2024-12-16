@@ -35,7 +35,7 @@ initializeDbAndServer()
 
 app.post('/books', async (request, response) => {
   const {title, author, genre, pages, publishedDate} = request.body // Posting Book Details
-  const id = uuidv4() //UUid Make Unique id
+  const id = uuidv4() ;//UUid Make Unique id
   try {
     const createStudentQuery = `
       INSERT INTO 
@@ -53,7 +53,7 @@ app.post('/books', async (request, response) => {
 
     response.send('Succesfully submit your Book to Database ')
   } catch (error) {
-    response.send('Error in submiting Book')
+   response.send('Error in submiting Book')
   }
 })
 
